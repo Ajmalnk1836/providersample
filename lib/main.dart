@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mvvmwithprovider/view/homepage/home.dart';
 import 'package:mvvmwithprovider/viewmodel/favouratecontrooler/favouratescreenprovider.dart';
 import 'package:mvvmwithprovider/viewmodel/homepage/homecontroller.dart';
+import 'package:mvvmwithprovider/viewmodel/notifylisnerprovider/notifylisnerprovider.dart';
 import 'package:mvvmwithprovider/viewmodel/themechangerprovider/themechnagerProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => Themechanger(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NotifyLisnter(),
         ),
       ],
       child: Builder(builder: (context) {
