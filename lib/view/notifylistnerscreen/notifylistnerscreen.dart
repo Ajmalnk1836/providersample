@@ -1,6 +1,6 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:mvvmwithprovider/view/loginpart/loginscreen.dart';
 import 'package:mvvmwithprovider/viewmodel/notifylisnerprovider/notifylisnerprovider.dart';
 import 'package:provider/provider.dart';
 
@@ -36,11 +36,20 @@ class NotifylistnerScreen extends StatelessWidget {
                         provider.optShow(provider.showotp);
                       },
                       icon: provider.showotp
-                          ? Icon(Icons.visibility_off_outlined)
-                          : Icon(Icons.visibility)),
+                          ? const Icon(Icons.visibility_off_outlined)
+                          : const Icon(Icons.visibility)),
                 ),
               ),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Loginscreen(),
+                      ));
+                },
+                child: const Text("Rest api login sample with provider"))
           ],
         ),
       )),
@@ -48,7 +57,7 @@ class NotifylistnerScreen extends StatelessWidget {
         onPressed: () {
           _counter.value++;
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
